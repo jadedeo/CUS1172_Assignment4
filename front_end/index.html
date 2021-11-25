@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COURSE APP</title>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <script src="courseApp.js"> </script>
+    </head>
+    <body>
+
+        <h1>COURSE SEARCH APPLICATION</h1>
+        <form onsubmit="return false;" id="queryForm">
+            <label for="nameQuery">Search by instructor:</label><br>
+            <input type="text" id="nameQuery" name="nameQuery" value=""><br>
+            <button id="queryByName" onclick="updateView(this)" value="Query" data-querytype="by_name">QUERY</button>
+        </form>
+        <div id="results">
+
+        </div>
+        
+    </body>
+
+</html>
+
+<script id="resultsView" type="text/x-handlebars-template">
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Level</th>
+            <th>Title</th>
+            <th>Instructor</th>
+        </tr>
+        {{#each courses}}
+            <tr>
+                <td>{{this.course_code}}</td>
+                <td>{{this.course_level}}</td>
+                <td>{{this.title}}</td>
+                <td>{{this.instructor}}</td>
+            </tr>
+        {{/each}}
+    </table>
+</script>
+
+<!--
+<script id="resultsView" type="text/x-handlebars-template">
+    <ul>
+        {{#each courses}}
+            <li>code: {{this.course_code}}</li>
+        {{/each}}
+    </ul>
+</script>
+-->
