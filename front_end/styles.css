@@ -29,6 +29,7 @@ input[type=text]{
     height:35px;
     padding-left:10px;
     padding-right:10px;
+    text-align: center;
 }
 
 .queryBox{
@@ -37,7 +38,7 @@ input[type=text]{
     margin-top:10px;
 }
 
-#queryBtn{
+#searchBtn, #clearBtn{
     margin-top:10px;
     margin-left:20px;
     border:none;
