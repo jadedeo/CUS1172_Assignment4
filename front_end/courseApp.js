@@ -36,37 +36,37 @@ var updateView = async(button) => {
         api =``;
 
         if(queryName.length > 0 && queryLevel.length > 0) {
-            console.log("NAME & LEVEL");
+            //console.log("NAME & LEVEL");
             queryName = "n" + nameQ;
             queryLevel = "l" + levelQ;
             api = `http://localhost:3000/api/combined_query/${queryName}/${queryLevel}`;
         }
         else if(queryName.length > 0 && queryCode.length > 0) {
-            console.log("NAME & CODE");
+            //console.log("NAME & CODE");
             queryName = "n" + nameQ;
             queryCode = "c" + codeQ;
             api = `http://localhost:3000/api/combined_query/${queryName}/${queryCode}`;
         }
         else if(queryName.length > 0 && queryTitle.length > 0) {
-            console.log("NAME & TITLE");
+            //console.log("NAME & TITLE");
             queryName = "n" + nameQ;
             queryTitle = "t" + titleQ;
             api = `http://localhost:3000/api/combined_query/${queryName}/${queryTitle}`;
         }
         else if(queryCode.length > 0 && queryLevel.length > 0) {
-            console.log("CODE & LEVEL");
+            //console.log("CODE & LEVEL");
             queryCode = "c" + codeQ;
             queryLevel = "l" + levelQ;
             api = `http://localhost:3000/api/combined_query/${queryCode}/${queryLevel}`;
         }
         else if(queryCode.length > 0 && queryTitle.length > 0) {
-            console.log("CODE & TITLE");
+            //console.log("CODE & TITLE");
             queryCode = "c" + codeQ;
             queryTitle = "t" + titleQ;
             api = `http://localhost:3000/api/combined_query/${queryCode}/${queryTitle}`;
         }
         else if(queryLevel.length > 0 && queryTitle.length > 0) {
-            console.log("LEVEL & TITLE");
+            //console.log("LEVEL & TITLE");
             queryLevel = "l" + levelQ;
             queryTitle = "t" + titleQ;
             api = `http://localhost:3000/api/combined_query/${queryLevel}/${queryTitle}`;
@@ -78,51 +78,43 @@ var updateView = async(button) => {
     }
     else{
         if(nameQ.length > 0){
-            console.log("name query");
-            //if(button.dataset.querytype == 'by_name'){
-                let queryValue = nameQ;
-                api = `http://localhost:3000/api/by_instructor/${queryValue}`;
-        
-                const data = await fetch(api);
-                const model = await data.json();
-                renderView(model);
-            //}
+            //console.log("name query");
+            let queryValue = nameQ;
+            api = `http://localhost:3000/api/by_instructor/${queryValue}`;
+    
+            const data = await fetch(api);
+            const model = await data.json();
+            renderView(model);
         } 
 
         if(codeQ.length > 0){
-            console.log("code query");
-            //if(button.dataset.querytype == 'by_name'){
-                let queryValue = codeQ;
-                api = `http://localhost:3000/api/by_course_code/${queryValue}`;
-        
-                const data = await fetch(api);
-                const model = await data.json();
-                renderView(model);
-            //}
+            //console.log("code query");
+            let queryValue = codeQ;
+            api = `http://localhost:3000/api/by_course_code/${queryValue}`;
+    
+            const data = await fetch(api);
+            const model = await data.json();
+            renderView(model);
         }
 
         if(levelQ.length > 0){
-            console.log("level query");
-            //if(button.dataset.querytype == 'by_name'){
-                let queryValue = levelQ;
-                api = `http://localhost:3000/api/by_level/${queryValue}`;
-        
-                const data = await fetch(api);
-                const model = await data.json();
-                renderView(model);
-            //}
+            //console.log("level query");
+            let queryValue = levelQ;
+            api = `http://localhost:3000/api/by_level/${queryValue}`;
+    
+            const data = await fetch(api);
+            const model = await data.json();
+            renderView(model);
         }
 
         if(titleQ.length > 0){
-            console.log("title query");
-            //if(button.dataset.querytype == 'by_name'){
-                let queryValue = titleQ;
-                api = `http://localhost:3000/api/by_title/${queryValue}`;
-        
-                const data = await fetch(api);
-                const model = await data.json();
-                renderView(model);
-            //}
+            //console.log("title query");
+            let queryValue = titleQ;
+            api = `http://localhost:3000/api/by_title/${queryValue}`;
+    
+            const data = await fetch(api);
+            const model = await data.json();
+            renderView(model);
         }
     }  
 }

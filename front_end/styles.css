@@ -23,7 +23,7 @@ h1{
     border-radius:8pt;
 }
 
-input[type=text]{
+input[type=text], select{
     border:none;
     border-radius:8pt;
     height:35px;
