@@ -4,15 +4,50 @@
         <title>COURSE APP</title>
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
         <script src="courseApp.js"> </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css">
+
     </head>
     <body>
+        <div id="topSection">
+            <h1><strong>COURSE SEARCH APPLICATION</strong></h1>
+            
+            <form onsubmit="return false;" id="queryForm">
+                <div id="queryRow">
+                    <div class="queryBox">
+                        <label for="codeeQuery"><strong>Search by COURSE CODE:</strong></label><br>
+                        <input type="text" id="codeQuery" name="codeQuery" value=""><br>
+                    </div>
 
-        <h1>COURSE SEARCH APPLICATION</h1>
-        <form onsubmit="return false;" id="queryForm">
-            <label for="nameQuery">Search by instructor:</label><br>
-            <input type="text" id="nameQuery" name="nameQuery" value=""><br>
-            <button id="queryByName" onclick="updateView(this)" value="Query" data-querytype="by_name">QUERY</button>
-        </form>
+                    <div class="queryBox">
+                        <label for="levelQuery"><strong>Search by LEVEL:</strong></label><br>
+                        <input type="text" id="levelQuery" name="levelQuery" value=""><br>
+                    </div>
+
+                    <div class="queryBox">
+                        <label for="titleQuery"><strong>Search by TITLE:</strong></label><br>
+                        <input type="text" id="titleQuery" name="titleQuery" value=""><br>
+                    </div>
+
+                    <div class="queryBox">
+                        <label for="nameQuery"><strong>Search by INSTRUCTOR:</strong></label><br>
+                        <input type="text" id="nameQuery" name="nameQuery" value=""><br>
+                    </div>
+
+                    <div class="queryBox">
+                        <button id="queryBtn" onclick="updateView(this)" value="Query" data-querytype="by_name"><strong>QUERY</strong></button>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+
         <div id="results">
 
         </div>
@@ -22,12 +57,12 @@
 </html>
 
 <script id="resultsView" type="text/x-handlebars-template">
-    <table>
+    <table class="table table-striped">
         <tr>
-            <th>Code</th>
-            <th>Level</th>
-            <th>Title</th>
-            <th>Instructor</th>
+            <th>CODE</th>
+            <th>LEVEL</th>
+            <th>TITLE</th>
+            <th>INSTRUCTOR</th>
         </tr>
         {{#each courses}}
             <tr>
@@ -39,13 +74,3 @@
         {{/each}}
     </table>
 </script>
-
-<!--
-<script id="resultsView" type="text/x-handlebars-template">
-    <ul>
-        {{#each courses}}
-            <li>code: {{this.course_code}}</li>
-        {{/each}}
-    </ul>
-</script>
--->

@@ -1,0 +1,59 @@
+*{
+    color:#382213;
+}
+body{
+    margin:5%;
+    background-color: #ffd8bd;
+}
+table{
+    margin-top: 20px;
+    background-color: #f5a469;
+    text-align: center;
+    border-radius:8pt;
+    border:none;
+}
+
+td{
+    border:none;
+}
+
+h1{
+    background-color: #f5a469;
+    padding:20px;
+    border-radius:8pt;
+}
+
+input[type=text]{
+    border:none;
+    border-radius:8pt;
+    height:35px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.queryBox{
+    margin-left:10px;
+    margin-right:10px;
+    margin-top:10px;
+}
+
+#queryBtn{
+    margin-top:10px;
+    margin-left:20px;
+    border:none;
+    border-radius:8pt;
+    height:50px;
+    width:100px;
+    background-color: #f5a469;
+}
+
+#topSection{
+    text-align: center;
+}
+
+#queryRow{
+    display:flex;
+    margin-top:50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
