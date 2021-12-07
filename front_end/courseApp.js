@@ -20,10 +20,16 @@ var updateView = async(button) => {
     }
 
     if(numQueries == 0){
-        alert("Please enter a query.");
+        api = `api/`;
+
+        //alert("Please enter a query.");
     }
     else if(numQueries > 2){
         alert("Please enter only a max of 2 queries.");
+        
+        const data = await fetch(api);
+        const model = await data.json();
+        renderView(model);
     }
     else if(numQueries == 2){
         //console.log("combined query");
