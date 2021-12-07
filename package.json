@@ -4,6 +4,6 @@
     "express": "^4.17.1"
   },
   "scripts": {
-    "start": "courseAPI.js"
+    "start": "node courseAPI.js"
 }
 }
