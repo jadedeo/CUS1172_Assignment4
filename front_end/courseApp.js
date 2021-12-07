@@ -39,37 +39,37 @@ var updateView = async(button) => {
             //console.log("NAME & LEVEL");
             queryName = "n" + nameQ;
             queryLevel = "l" + levelQ;
-            api = `http://localhost:3000/api/combined_query/${queryName}/${queryLevel}`;
+            api = `api/combined_query/${queryName}/${queryLevel}`;
         }
         else if(queryName.length > 0 && queryCode.length > 0) {
             //console.log("NAME & CODE");
             queryName = "n" + nameQ;
             queryCode = "c" + codeQ;
-            api = `http://localhost:3000/api/combined_query/${queryName}/${queryCode}`;
+            api = `api/combined_query/${queryName}/${queryCode}`;
         }
         else if(queryName.length > 0 && queryTitle.length > 0) {
             //console.log("NAME & TITLE");
             queryName = "n" + nameQ;
             queryTitle = "t" + titleQ;
-            api = `http://localhost:3000/api/combined_query/${queryName}/${queryTitle}`;
+            api = `api/combined_query/${queryName}/${queryTitle}`;
         }
         else if(queryCode.length > 0 && queryLevel.length > 0) {
             //console.log("CODE & LEVEL");
             queryCode = "c" + codeQ;
             queryLevel = "l" + levelQ;
-            api = `http://localhost:3000/api/combined_query/${queryCode}/${queryLevel}`;
+            api = `api/combined_query/${queryCode}/${queryLevel}`;
         }
         else if(queryCode.length > 0 && queryTitle.length > 0) {
             //console.log("CODE & TITLE");
             queryCode = "c" + codeQ;
             queryTitle = "t" + titleQ;
-            api = `http://localhost:3000/api/combined_query/${queryCode}/${queryTitle}`;
+            api = `api/combined_query/${queryCode}/${queryTitle}`;
         }
         else if(queryLevel.length > 0 && queryTitle.length > 0) {
             //console.log("LEVEL & TITLE");
             queryLevel = "l" + levelQ;
             queryTitle = "t" + titleQ;
-            api = `http://localhost:3000/api/combined_query/${queryLevel}/${queryTitle}`;
+            api = `api/combined_query/${queryLevel}/${queryTitle}`;
         }
 
         const data = await fetch(api);
@@ -80,7 +80,7 @@ var updateView = async(button) => {
         if(nameQ.length > 0){
             //console.log("name query");
             let queryValue = nameQ;
-            api = `http://localhost:3000/api/by_instructor/${queryValue}`;
+            api = `api/by_instructor/${queryValue}`;
     
             const data = await fetch(api);
             const model = await data.json();
@@ -90,7 +90,7 @@ var updateView = async(button) => {
         if(codeQ.length > 0){
             //console.log("code query");
             let queryValue = codeQ;
-            api = `http://localhost:3000/api/by_course_code/${queryValue}`;
+            api = `api/by_course_code/${queryValue}`;
     
             const data = await fetch(api);
             const model = await data.json();
@@ -100,7 +100,7 @@ var updateView = async(button) => {
         if(levelQ.length > 0){
             //console.log("level query");
             let queryValue = levelQ;
-            api = `http://localhost:3000/api/by_level/${queryValue}`;
+            api = `api/by_level/${queryValue}`;
     
             const data = await fetch(api);
             const model = await data.json();
@@ -110,7 +110,7 @@ var updateView = async(button) => {
         if(titleQ.length > 0){
             //console.log("title query");
             let queryValue = titleQ;
-            api = `http://localhost:3000/api/by_title/${queryValue}`;
+            api = `api/by_title/${queryValue}`;
     
             const data = await fetch(api);
             const model = await data.json();
