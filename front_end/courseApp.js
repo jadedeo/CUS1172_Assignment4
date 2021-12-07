@@ -26,7 +26,7 @@ var updateView = async(button) => {
         alert("Please enter only a max of 2 queries.");
     }
     else if(numQueries == 2){
-        console.log("combined query");
+        //console.log("combined query");
 
         let queryName = nameQ;
         let queryLevel = levelQ;

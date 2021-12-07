@@ -78,34 +78,32 @@ router.get('/combined_query/:q1/:q2', (req, res) => {
     let query1FirstUpper = String(query1Lower.charAt(0).toUpperCase() + query1Lower.slice(1));
     let query2FirstUpper = String(query2Lower.charAt(0).toUpperCase() + query2Lower.slice(1));
 
-    
-
-    console.log(query1FirstUpper);
+    //console.log(query1FirstUpper);
 
     filteredCourses = course["courses"];
 
     if(query1Type == "n" && query2Type == "c"){
-        console.log("N & C QUERY");
+        //console.log("N & C QUERY");
         filteredCourses = course["courses"].filter(q => ((q.instructor.includes(query1Short) || q.instructor.includes(query1Lower) || q.instructor.includes(query1FirstUpper)) && (q.course_code.includes(query2Short) || q.course_code.includes(query2Short.toUpperCase()))));
     }
     else if(query1Type == "n" && query2Type == "l"){
-        console.log("N & L QUERY");
+        //console.log("N & L QUERY");
         filteredCourses = course["courses"].filter(q => ((q.instructor.includes(query1Short) || q.instructor.includes(query1Lower) || q.instructor.includes(query1FirstUpper)) && q.course_level.includes(query2Short)));
     }
     else if(query1Type == "n" && query2Type == "t"){
-        console.log("N & T QUERY");
+        //console.log("N & T QUERY");
         filteredCourses = course["courses"].filter(q => ((q.instructor.includes(query1Short) || q.instructor.includes(query1Lower) || q.instructor.includes(query1FirstUpper)) && (q.title.includes(query2Short) || q.title.includes(query2Lower) || q.title.includes(query2FirstUpper))));
     }
     else if(query1Type == "c" && query2Type == "l"){
-        console.log("C & L QUERY");
+        //console.log("C & L QUERY");
         filteredCourses = course["courses"].filter(q => ((q.course_code.includes(query1Short) || q.course_code.includes(query1Short.toUpperCase())) && q.course_level.includes(query2Short)));
     }
     else if(query1Type == "c" && query2Type == "t"){
-        console.log("C & T QUERY");
+        //console.log("C & T QUERY");
         filteredCourses = course["courses"].filter(q => ((q.course_code.includes(query1Short) || q.course_code.includes(query1Short.toUpperCase())) && (q.title.includes(query2Short) || q.title.includes(query2Lower) || q.title.includes(query2FirstUpper))));
     }
     else if(query1Type == "l" && query2Type == "t"){
-        console.log("L & T QUERY");
+        //console.log("L & T QUERY");
         filteredCourses = course["courses"].filter(q => (q.course_level.includes(query1Short) && (q.title.includes(query2Short) || q.title.includes(query2Lower) || q.title.includes(query2FirstUpper))));
     }
 
